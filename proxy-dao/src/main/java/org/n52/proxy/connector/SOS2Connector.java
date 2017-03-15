@@ -28,10 +28,6 @@
  */
 package org.n52.proxy.connector;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
 import org.n52.proxy.config.DataSourceConfiguration;
 import org.n52.proxy.connector.constellations.MeasurementDatasetConstellation;
 import org.n52.proxy.connector.utils.ConnectorHelper;
@@ -66,6 +62,11 @@ import org.n52.shetland.ogc.sos.response.GetObservationResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Configurable;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 @Configurable
 public class SOS2Connector extends AbstractSosConnector {
@@ -193,7 +194,8 @@ public class SOS2Connector extends AbstractSosConnector {
         });
     }
 
-    protected GetFeatureOfInterestResponse getFeatureOfInterestResponseByProcedure(String procedureId, String serviceUri) {
+    protected GetFeatureOfInterestResponse getFeatureOfInterestResponseByProcedure(String procedureId,
+                                                                                   String serviceUri) {
         GetFeatureOfInterestRequest request = new GetFeatureOfInterestRequest(SosConstants.SOS,
                 Sos2Constants.SERVICEVERSION);
         request.setProcedures(new ArrayList<>(Arrays.asList(procedureId)));

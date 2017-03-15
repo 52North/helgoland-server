@@ -16,4 +16,11 @@ hs_err_pid*
 .classpath
 
 target
+
+
+# IDEA project files
+.idea
+*.iml
+
 nbactions.xml
+

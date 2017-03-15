@@ -49,6 +49,15 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <filter>
+        <filter-name>CachingFilter</filter-name>
+        <filter-class>org.n52.proxy.cache.CachingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CachingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <!-- Spring startup listener -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

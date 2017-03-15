@@ -28,9 +28,6 @@
  */
 package org.n52.proxy.connector;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
 import org.apache.http.HttpResponse;
 import org.apache.xmlbeans.XmlException;
 import org.apache.xmlbeans.XmlObject;
@@ -54,6 +51,10 @@ import org.n52.svalbard.util.CodingHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Optional;
 
 public abstract class AbstractSosConnector {
 
@@ -110,7 +111,8 @@ public abstract class AbstractSosConnector {
         }
     }
 
-    private OwsServiceResponse decodeResponse(HttpResponse response) throws XmlException, IOException, DecodingException {
+    private OwsServiceResponse decodeResponse(HttpResponse response)
+            throws XmlException, IOException, DecodingException {
         XmlObject xmlResponse = XmlObject.Factory.parse(response.getEntity().getContent());
         DecoderKey decoderKey = CodingHelper.getDecoderKey(xmlResponse);
         return (OwsServiceResponse) decoderRepository.getDecoder(decoderKey).decode(xmlResponse);

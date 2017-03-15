@@ -28,7 +28,6 @@
  */
 package org.n52.proxy.db.da;
 
-import java.util.Map;
 import org.hibernate.Session;
 import org.n52.io.response.dataset.text.TextData;
 import org.n52.io.response.dataset.text.TextValue;
@@ -39,6 +38,8 @@ import org.n52.series.db.beans.DataEntity;
 import org.n52.series.db.beans.TextDataEntity;
 import org.n52.series.db.beans.TextDatasetEntity;
 import org.n52.series.db.dao.DbQuery;
+
+import java.util.Map;
 
 public class ProxyTextDataRepository extends org.n52.series.db.da.TextDataRepository
         implements ProxyDataRepository<TextDatasetEntity, TextValue> {
@@ -63,7 +64,8 @@ public class ProxyTextDataRepository extends org.n52.series.db.da.TextDataReposi
     }
 
     @Override
-    protected TextData assembleData(TextDatasetEntity seriesEntity, DbQuery query, Session session) throws DataAccessException {
+    protected TextData assembleData(TextDatasetEntity seriesEntity, DbQuery query, Session session)
+            throws DataAccessException {
         TextData result = new TextData();
         this.getConnector(seriesEntity)
                 .getObservations(seriesEntity, query).stream()

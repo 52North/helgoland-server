@@ -5,7 +5,6 @@
  */
 package org.n52.proxy.connector.constellations;
 
-import java.util.Date;
 import org.n52.proxy.connector.utils.EntityBuilder;
 import org.n52.proxy.db.beans.ProxyServiceEntity;
 import org.n52.series.db.beans.CategoryEntity;
@@ -15,6 +14,8 @@ import org.n52.series.db.beans.FeatureEntity;
 import org.n52.series.db.beans.OfferingEntity;
 import org.n52.series.db.beans.PhenomenonEntity;
 import org.n52.series.db.beans.ProcedureEntity;
+
+import java.util.Date;
 
 /**
  * @author Jan Schulte
@@ -27,10 +28,12 @@ public class CountDatasetConstellation extends DatasetConstellation {
     }
 
     @Override
-    public DatasetEntity createDatasetEntity(ProcedureEntity procedure, CategoryEntity category, FeatureEntity feature,
-            OfferingEntity offering, PhenomenonEntity phenomenon, ProxyServiceEntity service) {
+    public DatasetEntity createDatasetEntity(ProcedureEntity procedureEntity, CategoryEntity categoryEntity,
+                                             FeatureEntity featureEntity, OfferingEntity offeringEntity,
+                                             PhenomenonEntity phenomenonEntity, ProxyServiceEntity proxyServiceEntity) {
         CountDatasetEntity countDataset = new CountDatasetEntity();
-        EntityBuilder.updateDatasetEntity(countDataset, procedure, category, feature, offering, phenomenon, service);
+        EntityBuilder.updateDatasetEntity(countDataset, procedureEntity, categoryEntity, featureEntity, offeringEntity,
+                phenomenonEntity, proxyServiceEntity);
         countDataset.setFirstValueAt(new Date());
         countDataset.setLastValueAt(new Date());
         return countDataset;

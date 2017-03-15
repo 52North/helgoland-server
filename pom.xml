@@ -16,6 +16,7 @@
     <modules>
         <module>proxy-dao</module>
         <module>proxy-mappings</module>
+        <module>proxy-cache</module>
         <module>proxy-webapp</module>
     </modules>
 
@@ -89,6 +90,11 @@
                 <artifactId>proxy-mappings</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>proxy-cache</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>${project.groupId}</groupId>
@@ -100,10 +106,11 @@
                 <artifactId>rest</artifactId>
                 <version>${series.api.version}</version>
             </dependency>
+            <!--quick fix of issue #2-->
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>series-dao</artifactId>
-                <version>${series.api.version}</version>
+                <version>2.0.0-20170303.042613-291</version>
             </dependency>
             <dependency>
                 <groupId>org.n52.sensorweb</groupId>

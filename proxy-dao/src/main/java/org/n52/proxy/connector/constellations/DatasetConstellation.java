@@ -83,11 +83,11 @@ public abstract class DatasetConstellation {
     }
 
     public abstract DatasetEntity createDatasetEntity(
-            ProcedureEntity procedure,
-            CategoryEntity category,
-            FeatureEntity feature,
-            OfferingEntity offering,
-            PhenomenonEntity phenomenon,
-            ProxyServiceEntity service);
+            ProcedureEntity procedureEntity,
+            CategoryEntity categoryEntity,
+            FeatureEntity featureEntity,
+            OfferingEntity offeringEntity,
+            PhenomenonEntity phenomenonEntity,
+            ProxyServiceEntity proxyServiceEntity);
 
 }

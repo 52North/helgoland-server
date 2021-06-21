@@ -68,7 +68,7 @@
         <postgresql.version>42.2.22</postgresql.version>
         <postgis.version>2.5.0</postgis.version>
         <xml-commons.version>2.7.0</xml-commons.version>
-        <jena.version>3.17.0</jena.version>
+        <jena.version>4.1.0</jena.version>
         <jts.version>1.18.1</jts.version>
         <java.compiler.source>1.8</java.compiler.source>
         <java.compiler.target>1.8</java.compiler.target>

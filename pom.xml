@@ -65,7 +65,7 @@
         <version.sensorweb-server-helgoland>3.5.0-PR.2</version.sensorweb-server-helgoland>
         <version.sensorweb-server-dao-impl>4.0.0-PR.3</version.sensorweb-server-dao-impl>
         <version.sensorweb-server-db-model>4.0.0-PR.2</version.sensorweb-server-db-model>
-        <postgresql.version>42.2.22</postgresql.version>
+        <postgresql.version>42.2.23</postgresql.version>
         <postgis.version>2.5.0</postgis.version>
         <xml-commons.version>2.7.0</xml-commons.version>
         <jena.version>3.17.0</jena.version>
